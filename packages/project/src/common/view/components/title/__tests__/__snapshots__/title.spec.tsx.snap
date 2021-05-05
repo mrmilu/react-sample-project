@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title Render 1`] = `
+<div>
+  <h2
+    class=""
+  >
+    The title
+  </h2>
+</div>
+`;
+
+exports[`Title Should contains bold className 1`] = `
+<div>
+  <h2
+    class="bold"
+  >
+    The title
+  </h2>
+</div>
+`;

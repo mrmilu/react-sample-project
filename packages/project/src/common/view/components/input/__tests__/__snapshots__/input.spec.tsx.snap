@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Render 1`] = `
+<div>
+  <div>
+    <label
+      for="test"
+    >
+      Test
+    </label>
+    <input
+      id="test"
+      style="color: black;"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

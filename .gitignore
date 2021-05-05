@@ -1,0 +1,10 @@
+/.history
+/.idea
+node_modules
+dist/
+build/
+coverage/
+tailwind.parsed.css
+.env
+.jest-test-results.json
+storybook/

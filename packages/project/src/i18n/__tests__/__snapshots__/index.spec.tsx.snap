@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`i18n Should translate a text in english 1`] = `
+<div>
+  <div>
+    Sample title
+  </div>
+</div>
+`;
+
+exports[`i18n Should translate a text in spanish 1`] = `
+<div>
+  <div>
+    Título de ejemplo
+  </div>
+</div>
+`;

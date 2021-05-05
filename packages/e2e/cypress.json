@@ -1,0 +1,52 @@
+{
+  "trashAssetsBeforeRuns": true,
+  "env": {
+    "failSilently": false,
+    "cypress-plugin-snapshots": {
+      "autoCleanUp": false,
+      "autopassNewSnapshots": true,
+      "diffLines": 3,
+      "excludeFields": [],
+      "ignoreExtraArrayItems": false,
+      "ignoreExtraFields": false,
+      "normalizeJson": true,
+      "prettier": true,
+      "imageConfig": {
+        "createDiffImage": true,
+        "resizeDevicePixelRatio": true,
+        "threshold": 0.1,
+        "thresholdType": "percent"
+      },
+      "screenshotConfig": {
+        "blackout": [],
+        "capture": "fullPage",
+        "clip": null,
+        "disableTimersAndAnimations": true,
+        "log": true,
+        "scale": false,
+        "timeout": 30000
+      },
+      "serverEnabled": true,
+      "serverHost": "localhost",
+      "serverPort": 2121,
+      "updateSnapshots": false,
+      "backgroundBlend": "difference"
+    }
+  },
+  "ignoreTestFiles": [
+    "**/__snapshots__/*",
+    "**/__image_snapshots__/*"
+  ],
+  "failOnStatusCode": false,
+  "fixturesFolder": "./src/fixtures",
+  "integrationFolder": "./src/tests",
+  "pluginsFile": "./src/plugins/index.ts",
+  "screenshotsFolder": "./src/screenshots",
+  "supportFile": "./src/support/index.ts",
+  "videosFolder": "./src/videos",
+  "nodeVersion": "system",
+  "screenshotOnRunFailure": true,
+  "viewportHeight": 900,
+  "viewportWidth": 1800,
+  "defaultCommandTimeout": 10000
+}

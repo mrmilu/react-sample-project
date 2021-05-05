@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "jest",
+      "jest-extended",
+      "jest-chain",
+      "@testing-library/jest-dom",
+      "jest-styled-components",
+      "twin.macro",
+      "vite/client"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "*.ts",
+    "*.tsx"
+  ]
+}

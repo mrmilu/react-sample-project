@@ -1,0 +1,118 @@
+{
+  "name": "@react-sample-project/root",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "ReactSampleProject mono repository",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "Mr Milú",
+  "license": "ISC",
+  "scripts": {
+    "--- HELPERS ---": "----------------------------------------------------------------------------------------",
+    "lerna:run": "lerna run --stream",
+    "clean:root": "rm -fr node_modules",
+    "clean:all": "yarn lerna:run clean --parallel",
+    "lint:packages": "yarn lerna:run lint",
+    "lint:root": "eslint --ext .js,.jsx,.ts,.tsx packages/",
+    "lint:stage": "eslint --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,sass}\" \"!dist/**\" \"!**/tailwind.parsed.css\" \"!**/tailwind.css\"",
+    "stylelint:fix": "yarn stylelint --fix",
+    "stylelint:stage": "stylelint --fix",
+    "post:patch": "patch-package",
+    "post:husky": "is-ci || husky install",
+    "postinstall": "run-p post:patch post:husky",
+    "update": "./scripts/up.sh",
+    "--- MAIN ---": "----------------------------------------------------------------------------------------",
+    "build": "yarn lerna:run build --concurrency=3",
+    "watch": "yarn lerna:run watch --parallel --include-dependencies",
+    "test": "jest",
+    "test:ci": "yarn test --coverage",
+    "test:e2e": "concurrently --kill-others \"yarn project:watch\" \"yarn e2e cy:open:local\"",
+    "clean": "run-s clean:all clean:root",
+    "ci": "yarn clean && yarn",
+    "lint": "yarn lint:packages",
+    "lint:fix": "yarn lerna:run lint:fix && yarn lerna:run stylelint:fix",
+    "--- PROJECT ---": "----------------------------------------------------------------------------------------",
+    "project": "yarn lerna:run --scope @react-sample-project/project",
+    "project:watch": "yarn project watch",
+    "project:build": "yarn project build",
+    "project:build:full": "yarn project build --include-dependencies",
+    "--- E2E ---": "----------------------------------------------------------------------------------------",
+    "e2e": "yarn lerna:run --scope @react-sample-project/e2e"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-decorators": "7.13.15",
+    "@babel/plugin-transform-react-jsx": "7.13.12",
+    "@babel/preset-env": "7.14.1",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@commitlint/cli": "12.1.1",
+    "@commitlint/config-conventional": "12.1.1",
+    "@types/jest": "26.0.23",
+    "@types/node": "15.0.2",
+    "@typescript-eslint/eslint-plugin": "4.22.1",
+    "@typescript-eslint/parser": "4.22.1",
+    "autoprefixer": "10.2.5",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "26.6.3",
+    "builtin-modules": "3.2.0",
+    "concurrently": "6.0.2",
+    "cross-env": "7.0.3",
+    "cssnano": "5.0.2",
+    "dotenv-cli": "4.0.0",
+    "eslint": "7.25.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-sonarjs": "0.7.0",
+    "husky": "6.0.0",
+    "identity-obj-proxy": "3.0.0",
+    "is-ci": "3.0.0",
+    "jest": "26.6.3",
+    "jest-chain": "1.1.5",
+    "jest-extended": "0.11.5",
+    "lerna": "4.0.0",
+    "lint-staged": "10.5.4",
+    "npm-check-updates": "11.5.10",
+    "npm-run-all": "4.1.5",
+    "patch-package": "6.4.7",
+    "prettier": "2.2.1",
+    "regenerator-runtime": "0.13.7",
+    "rimraf": "3.0.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-sass-guidelines": "8.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.19.0",
+    "ts-jest": "26.5.5",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}|!dist|!node_modules": [
+      "yarn lint:stage"
+    ],
+    "*.{css,scss}|*/tailwindcss.parsed.css|!dist|!node_modules": [
+      "yarn stylelint:stage"
+    ]
+  }
+}

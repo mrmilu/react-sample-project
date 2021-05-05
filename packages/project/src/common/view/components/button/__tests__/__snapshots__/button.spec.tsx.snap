@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Render 1`] = `
+<div>
+  <button>
+    <div
+      data-mocked-component="Title"
+    >
+      This is a button
+    </div>
+    Sample button
+  </button>
+</div>
+`;

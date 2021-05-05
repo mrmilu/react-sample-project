@@ -1,0 +1,155 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+::-webkit-file-upload-button {
+  appearance: button;
+  font: inherit;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-search-decoration {
+  appearance: none;
+}
+
+[role=button],
+button {
+  cursor: pointer;
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+  appearance: button;
+}
+
+[type=search] {
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 1em;
+}
+
+fieldset,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border-top-width: 1px;
+  color: inherit;
+  height: 0;
+}
+
+img {
+  border-style: solid;
+}
+
+//input::placeholder, textarea::placeholder {
+//  color: #9ca3af
+//}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+summary {
+  display: list-item;
+}
+
+sup {
+  top: -.5em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table {
+  border-color: inherit;
+  text-indent: 0;
+}
+
+textarea {
+  resize: vertical;
+}
