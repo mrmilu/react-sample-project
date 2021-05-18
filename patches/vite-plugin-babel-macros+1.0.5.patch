@@ -1,0 +1,15 @@
+diff --git a/node_modules/vite-plugin-babel-macros/dist/plugin.js b/node_modules/vite-plugin-babel-macros/dist/plugin.js
+index 9f486f8..0288f3a 100644
+--- a/node_modules/vite-plugin-babel-macros/dist/plugin.js
++++ b/node_modules/vite-plugin-babel-macros/dist/plugin.js
+@@ -25,8 +25,8 @@ function macrosPlugin() {
+                     ],
+                     require.resolve("babel-plugin-macros"),
+                 ],
+-                babelrc: false,
+-                configFile: false,
++                babelrc: true,
++                // configFile: 'babel.config.js',
+                 sourceMaps: true,
+             });
+             return result;

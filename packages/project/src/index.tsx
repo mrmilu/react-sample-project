@@ -6,6 +6,7 @@ import store from './common/view/store/store';
 import App from './app.component';
 import './assets/reset.scss';
 import './index.scss';
+import './assets/tailwind.parsed.css';
 import { ConfigEnv } from './common/config.env';
 
 Sentry.init({
@@ -27,6 +28,6 @@ ReactDOM.render(
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
 if (ConfigEnv.IS_DEV && import.meta?.hot) {
-  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
+  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access,  @typescript-eslint/no-unsafe-call */
   import.meta.hot.accept();
 }

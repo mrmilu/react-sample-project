@@ -1,8 +1,9 @@
-# react-sample-project
+# sampleproject
 
 This repository is a mono repository, this means that there are multiple packages in the same repository
 
 All packages are located inside folder `packages` and every package have a **package.json** file that defines the pkg itself
+
 
 ## Development
 

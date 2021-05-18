@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../../common/view/store/store';
 import { selectSample, selectName } from './sample.selectors';
-import { sampleStore } from './sample.slice';
+import { setSample, setSampleName, resetConfiguration, sampleThunk } from './sample.slice';
 import type { SampleState } from './sample.types';
 
 /**
@@ -14,8 +14,8 @@ export function useReduxSample() {
   const state = useSelector(selectSample);
   return [
     useMemo(() => state, [state]),
-    useCallback((newState: Partial<typeof state>) => dispatch(sampleStore.actions.setSample(newState)), [dispatch]),
-    useCallback(() => dispatch(sampleStore.actions.resetConfiguration()), [dispatch])
+    useCallback((newState: Partial<typeof state>) => dispatch(setSample(newState)), [dispatch]),
+    useCallback(() => dispatch(resetConfiguration()), [dispatch])
   ] as const;
 }
 
@@ -28,6 +28,7 @@ export function useReduxSampleName() {
   const state = useSelector(selectName);
   return [
     useMemo(() => state, [state]),
-    useCallback((newName: SampleState['sampleName']) => dispatch(sampleStore.actions.setSampleName(newName)), [dispatch])
+    useCallback((newName: SampleState['sampleName']) => dispatch(setSampleName(newName)), [dispatch]),
+    useCallback((newName: SampleState['sampleName']) => dispatch(sampleThunk(newName)), [dispatch])
   ] as const;
 }

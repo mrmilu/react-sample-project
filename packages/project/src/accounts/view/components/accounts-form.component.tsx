@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import React, { useRef } from 'react';
 import yup from '../../../common/utils/yup-extendend';
 import { Formik, Field, Form, FormikProps } from 'formik';
@@ -65,6 +63,7 @@ const AccountsForm = () => {
             {/*This checkbox uses the traditional method of an input element with handleChange function as onChange handler*/}
             <label>
               <input type="checkbox" name="toggle" onChange={handleChange} checked={values.toggle} />
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               I'm a basic checkbox
             </label>
 

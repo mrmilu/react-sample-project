@@ -19,12 +19,12 @@ const routes: AppRoute[] = [
   },
   {
     path: '/accounts-guard',
-    guard: { execute: () => true },
+    guard: { execute: () => Promise.resolve(true) },
     component: () => 'guarded route --'
   },
   {
     path: '/accounts-guard-with-redirect',
-    guard: { execute: () => '/accounts-redirect' },
+    guard: { execute: () => Promise.resolve('/accounts-redirect') },
     component: () => 'never reaching here --'
   },
   {
