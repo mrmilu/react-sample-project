@@ -29,5 +29,5 @@ ReactDOM.render(
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
 if (ConfigEnv.IS_DEV && import.meta?.hot) {
   /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access,  @typescript-eslint/no-unsafe-call */
-  import.meta.hot.accept();
+  import.meta.hot?.accept();
 }
