@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const mrMiluColors = require('./mrMiluColors');
 
 module.exports = {
   purge: false,
@@ -27,7 +28,8 @@ module.exports = {
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
-      pink: colors.pink
+      pink: colors.pink,
+      ...mrMiluColors
     },
     spacing: {
       px: '1px',
